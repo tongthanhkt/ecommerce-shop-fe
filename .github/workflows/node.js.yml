@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - name: Clear npm cache
+        run: npm cache clean --force
       - run: npm install
       - run: npm run build
       - run: cp -r /home/ubuntu/fe-runner/_work/ecommerce-shop-fe/ecommerce-shop-fe/dist /var/www/html
