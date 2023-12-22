@@ -26,5 +26,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       
-      - run: npm run build --if-present
+      - run: npm run build 
       - run: cp -r /home/ubuntu/fe-runner/_work/ecommerce-shop-fe/ecommerce-shop-fe/dist /var/www/html
