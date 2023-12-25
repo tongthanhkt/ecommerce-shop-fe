@@ -27,6 +27,7 @@ jobs:
           cache: "npm"
       - name: Clear npm cache
         run: npm cache clean --force
+      - run: npm install -D webpack-cli
       # - run: npm install
       - run: npm run build
       - run: sudo cp -r /home/ubuntu/frontend-runer/_work/ecommerce-shop-fe/ecommerce-shop-fe/dist/* /var/www/html/
