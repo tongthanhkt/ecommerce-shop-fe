@@ -19,6 +19,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Create environment file
+        run: |
+          touch .env
+          echo PORT=${{vars.API_URL}} >> .env
       - name: Install dependency
         run: npm install
       - name: Build
@@ -32,3 +36,4 @@ jobs:
           remote_host: ${{ secrets.SSH_HOST }}
           remote_user: ubuntu
           remote_key: ${{ secrets.SSH_KEY }}
+      - run: sudo cp -r /home/ubuntu/ecommerce-shop-fe/dist/* /var/www/html/
