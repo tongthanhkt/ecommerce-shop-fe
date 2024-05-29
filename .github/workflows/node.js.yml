@@ -25,10 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: Clear npm cache
-        run: npm cache clean --force
-      # run: npm install -D webpack-cli
-      # - run: npm install
+      - run: npm install
       - run: npm run build
       # - run: sudo cp -r /home/ubuntu/ecommerce-shop-fe/dist/* /var/www/html/
       # https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
