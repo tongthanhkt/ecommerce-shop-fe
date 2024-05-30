@@ -22,7 +22,7 @@ jobs:
       - name: Create environment file
         run: |
           touch .env
-          echo PORT=${{vars.API_URL}} >> .env
+          echo API_URL=${{vars.API_URL}} >> .env
       - name: Install dependency
         run: npm install
       - name: Build
